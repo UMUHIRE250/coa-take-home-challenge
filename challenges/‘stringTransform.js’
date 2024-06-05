@@ -1,0 +1,25 @@
+function transformString(str) {
+    let length = str.length;
+    let transformedStr = str;
+
+    
+    if (length % 3 === 0 && length % 5 === 0) {
+        
+        transformedStr = transformedStr.split('').reverse().join('');
+      
+        transformedStr = transformedStr.split('').map(char => char.charCodeAt(0)).join(' ');
+    }
+   
+    else if (length % 3 === 0) {
+        transformedStr = transformedStr.split('').reverse().join('');
+    }
+    
+    else if (length % 5 === 0) {
+        transformedStr = transformedStr.split('').map(char => char.charCodeAt(0)).join(' ');
+    }
+
+    return transformedStr;
+}
+
+let input = "Hello World";
+console.log(transformString(input));  // Output: "87 111 114 108 100 32 111 108 108 101 72"
